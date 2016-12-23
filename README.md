@@ -1,8 +1,8 @@
 Provides an inform information box from a perl6 program. It is easy to add buttons and simple entry widgets to the box. Information is returned to a capture object.
 The module depends on gtk and borrows heavily from the gtk-simple module, but is not dependent on it.
 Module developed using Ubuntu.
-'''
 eg.
+```
 use Inform;
 =comment
   Show a box with some information on screen, has a destructor x on window, but removes itself after 10s.
@@ -43,7 +43,7 @@ if $data<Cancel> { say 'Great, more free time for me' }
 elsif $data<Response> or $data<_activate> {
   for $data<Laundry>.comb(/W+/) { say "I will clean your $_" }
 }
-
+```
 There are no limits in the module on the number of buttons or entry widgets that can be added. However, in practice, the reliance on gtk default formating will probably quickly make the inform box look ugly.
 
 If more complicated widgets or formating are required, look at the Gtk::Simple module.
