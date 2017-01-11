@@ -71,7 +71,10 @@ my $data = inform('Give me some things to clean',
     );
 =comment
   Box contains a label, then one or more entry widgets, then a row of boxes. 
-  The formating will depend on gtk defaults
+  The formating will depend on gtk defaults.
+  NOTE: 'buttons' and 'entries' each expect a list of pairs, not a hash. So the comma
+  after '...laundry list' and before the bracket is essential to force a list. With
+  two elements, as in the buttons expression, a list already forms. 
 
 if $data.response eq 'Cancel' { say 'Great, more free time for me' }
 elsif $data.response eq 'Response' {
