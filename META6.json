@@ -1,12 +1,12 @@
 {
     "name" : "Inform",
-    "authors" : "Richard Hainsworth, aka finanalyst"
+    "authors" : "Richard Hainsworth, aka finanalyst",
     "version" : "0.1",
     "perl"    : "6.c",
     "description" : "Easy to use GUI Dialog box using GTK3 label, button, entry widgets",
     "build-depends" : [ "LWP::Simple", "panda", "Shell::Command" ],
     "provides" : {
-        "Informative"    : "lib/Informative.pm6"
+        "Informative" : "lib/Informative.pm6"
     },
     "repo-type" : "git",
     "source-url" : "git://github.com/finanalyst/p6-inform.git",
