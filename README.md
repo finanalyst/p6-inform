@@ -8,12 +8,14 @@ For example
 
 use Informative;
 =comment
-  Show a box with some information on screen, has a destructor x on window, but removes itself after 10s. Notice that there is a countdown time for information.
+  Show a box with some information on screen, has a destructor x on window, but removes itself after 10s.
+  Notice that there is a countdown time for information.
   The string can be marked up with pango markup. 
   
 inform( 'This is <span color="blue">blue</span> and <span color="red" weight="bold">red</span> information'  );
 =comment
-  The label shown in the box is 'This is blue and red information' (with colours), the default title is 'Inform'
+  The label shown in the box is 'This is blue and red information' (with colours).
+  The default title is 'Inform'
 
 =comment 
   New title and for a shorter time (5s), note that a timer of 0 is forever.
@@ -38,8 +40,9 @@ my $gui-response = inform( 'Do you want to continue?',
     ); 
 say "We have {$gui-response.response} ";
 =comment
-  The box contains the label 'Do you want to continue' and has three buttons with labels 'OK', 'Not on your life' and "I don't want to"
-    The name of the button clicked (OK, b2, Cancel) is printed
+  The box contains the label 'Do you want to continue' and has three buttons 
+  with labels 'OK', 'Not on your life' and "I don't want to"
+  The name of the button clicked (OK, b2, Cancel) is printed
 
 =comment
   Access response 
@@ -65,7 +68,8 @@ my $data = inform('Give me some things to clean',
     :entries( Laundry => 'Enter your laundry list',)
     );
 =comment
-  Box contains a label, then one or more entry widgets, then a row of boxes. The formating will depend on gtk defaults
+  Box contains a label, then one or more entry widgets, then a row of boxes. 
+  The formating will depend on gtk defaults
 
 if $data.response eq 'Cancel' { say 'Great, more free time for me' }
 elsif $data.response eq 'Response' {
