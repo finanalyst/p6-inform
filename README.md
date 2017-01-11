@@ -2,8 +2,10 @@ Provides an inform information box from a perl6 program. It is easy to add butto
 The module depends on gtk and borrows heavily from the gtk-simple module, but is not dependent on it.
 This module was developed using Ubuntu, but all of the Windows paraphanalia from Gdk::Simple is copied. It should work under Windows. 
 
-eg.
-```perl6#! /usr/bin/env perl6
+For example
+
+```perl6
+
 use Informative;
 =comment
   Show a box with some information on screen, has a destructor x on window, but removes itself after 10s. Notice that there is a countdown time for information.
@@ -70,6 +72,7 @@ elsif $data.response eq 'Response' {
   for $data.data<Laundry>.comb(/\w+/) { say "I will clean your $_" }
 }
 ```
+
 A design goal his to keep the module as simple and small as possible, and to result in a popup that is intuitive to the user. Hence:
 - A buttonless lable has a countdown timer to show when it is disappearing.
 - Entries are not permitted without buttons. In principle, gtk_entry has an Activate signal that could be attached to an Entry widget (when text is ended with a Return key). However, a dialog box with only an entry form with no obvious way to respond would be difficult to understand.
