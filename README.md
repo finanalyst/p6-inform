@@ -80,6 +80,16 @@ if $data.response eq 'Cancel' { say 'Great, more free time for me' }
 elsif $data.response eq 'Response' {
   for $data.data<Laundry>.comb(/\w+/) { say "I will clean your $_" }
 }
+
+=comment
+    An entry widget can mask input, as in password requests, by adding _pw or -pw onto the
+    name of the entry.
+
+my $login = inform('Please supply your username and password', 
+    :entries(un => 'User name', pw_pw => 'Password')
+    );
+
+if $login.response eq 'OK' { say "user name is \<{$login.data<un>}> and password is \<{$login.data<pw_pw>}>" };
 ```
 
 A design goal his to keep the module as simple and small as possible, and to result in a popup that is intuitive to the user. Hence:
