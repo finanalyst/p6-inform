@@ -1,4 +1,4 @@
-FN=first
+FN=third
 
 compile:
 	perl6 -c $(FN).p6

@@ -1,48 +1,83 @@
 Provides an inform information box from a perl6 program. It is easy to add buttons and simple entry widgets to the box. Information is returned to a capture object.
 The module depends on gtk and borrows heavily from the gtk-simple module, but is not dependent on it.
-Module developed using Ubuntu.
+This module was developed using Ubuntu, but all of the Windows paraphanalia from Gdk::Simple is copied. It should work under Windows. 
+
 eg.
-```
-use Inform;
+```perl6#! /usr/bin/env perl6
+use Informative;
 =comment
-  Show a box with some information on screen, has a destructor x on window, but removes itself after 10s.
-inform( 'this is information' );
-# The label shown in the box is 'this is information', the default title is 'Inform'
+  Show a box with some information on screen, has a destructor x on window, but removes itself after 10s. Notice that there is a countdown time for information.
+  The string can be marked up with pango markup. 
+  
+inform( 'This is <span color="blue">blue</span> and <span color="red" weight="bold">red</span> information'  );
+=comment
+  The label shown in the box is 'This is blue and red information' (with colours), the default title is 'Inform'
 
 =comment 
-  As above but for a longer time (15s)
-inform( 'longer time span for me', :timer(15), :title<More> );
-# The title of the window is now 'More'
+  New title and for a shorter time (5s), note that a timer of 0 is forever.
+  
+my $popup = inform( 'Shorter time span for me', :timer(5), :title<More> );
+=comment
+  The title of the window is now 'More'
+
+=comment 
+  The 'Informing' object in $popup can be reused with changes in message, countdown and timer.
+  The title, buttons and entries are only allowed when creating a new 'Informing' object.
+  
+$popup.show( 'See no countdown, but timer is unchanged', :!show-countdown );
+=comment
+  The timer is now no longer showing
 
 =comment
-  Add a couple of buttons
-my $response = inform( 'Do you want to continue?').attach-buttons( 'OK','Not on your life', 'Cancel'=> "I don't want to"); 
-# The box contains the label 'Do you want to continue' and has three buttons with labels 'OK', 'Not on your life' and "I don't want to"
+  Add some buttons
+  
+my $gui-response = inform( 'Do you want to continue?', 
+    :buttons( OK=>'OK',b2=>'Not on your life', 'Cancel'=> "I don't want to")
+    ); 
+say "We have {$gui-response.response} ";
 =comment
-  Access response information using an array interogation: the order is dependent on the order of the buttons in the calling list
-say 'Ok continuing' if $response[0];
+  The box contains the label 'Do you want to continue' and has three buttons with labels 'OK', 'Not on your life' and "I don't want to"
+    The name of the button clicked (OK, b2, Cancel) is printed
+
 =comment
-  Access response using a hash intergation based on the string
-say 'I am heedful of your desires' if $response<Not on your life>;
+  Access response 
+  
+say 'Ok continuing' if $gui-response.response eq 'OK';
 =comment
-  Access response based on key of key/pair item
-say 'Sure, I can wait for ever if you want' if $response<Cancel>;
+  Check other responses
+  
+say 'I am heedful of your desires' if $gui-response.response ~~ any <b2 Cancel>;
 =comment
   Check whether the destruct x was clicked
-say 'So you don\'t like the options I gave you, huh?' if $response<_destruct>;
+  
+say 'So you don\'t like the options I gave you, huh?' if $gui-response.response eq '_destruct';
 
 =comment
-  Add an entry widget
-my $data = inform('Give me some things to clean').attach-buttons(:Cancel('None today'), 'Response'=>'Here you go').attach-entry( 'Laundry' => 'Enter your laundry list');
-# Box contains a label, then one or more entry widgets, then a row of boxes. The formating will depend on gtk defaults
-
-if $data<Cancel> { say 'Great, more free time for me' }
+  Add an entry widget and some buttons
+  Note that if an entry widget is requested, but no buttons are requested, then
+  Cancel and OK are added automatically. 
+  An entry widget without buttons is not allowed (design decision)
+  
+my $data = inform('Give me some things to clean',
+    :buttons(Cancel => 'None today', :Response('Here you go')),
+    :entries( Laundry => 'Enter your laundry list',)
+    );
 =comment
-  the special _activate flag is set when the <return> key is used to terminate input inside an entry widget
-elsif $data<Response> or $data<_activate> {
-  for $data<Laundry>.comb(/W+/) { say "I will clean your $_" }
+  Box contains a label, then one or more entry widgets, then a row of boxes. The formating will depend on gtk defaults
+
+if $data.response eq 'Cancel' { say 'Great, more free time for me' }
+elsif $data.response eq 'Response' {
+  for $data.data<Laundry>.comb(/\w+/) { say "I will clean your $_" }
 }
 ```
+A design goal his to keep the module as simple and small as possible, and to result in a popup that is intuitive to the user. Hence:
+- A buttonless lable has a countdown timer to show when it is disappearing.
+- Entries are not permitted without buttons. In principle, gtk_entry has an Activate signal that could be attached to an Entry widget (when text is ended with a Return key). However, a dialog box with only an entry form with no obvious way to respond would be difficult to understand.
+- All Buttons act in the same way: if Entry widgets are present, the text is stored in the data attribute, and the dialog box is closed. It is for the user to determine how to handle the data.
+- A dialog box that is destroy by clicking on the x will not store Entry data.
+
 There are no limits in the module on the number of buttons or entry widgets that can be added. However, in practice, the reliance on gtk default formating will probably quickly make the inform box look ugly.
 
-If more complicated widgets or formating are required, look at the Gtk::Simple module.
+If more sophisticated button behaviours, different widgets or formating are required, look at the Gtk::Simple module.
+
+TODO: The order of the buttons and entries needs to be the same as the user declares them. 
