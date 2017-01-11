@@ -1,6 +1,8 @@
-Provides an inform information box from a perl6 program. It is easy to add buttons and simple entry widgets to the box. Information is returned to a capture object.
+Provides a dialog box from a perl6 program. It is easy to add buttons and simple entry widgets to the box. Information is returned to a capture object.
 The module depends on gtk and borrows heavily from the gtk-simple module, but is not dependent on it.
 This module was developed using Ubuntu, but all of the Windows paraphanalia from Gdk::Simple is copied. It should work under Windows. 
+
+The example uses the inform procedural style subroutine, but the object based style can be seen by looking at inform.
 
 For example
 
