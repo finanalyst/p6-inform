@@ -1,13 +1,5 @@
-Provides a dialog box from a perl6 program. It is easy to add buttons and simple entry widgets to the box. Information is returned to a capture object.
-The module depends on gtk and borrows heavily from the gtk-simple module, but is not dependent on it.
-This module was developed using Ubuntu, but all of the Windows paraphanalia from Gdk::Simple is copied. It should work under Windows. 
-
-The example uses the inform procedural style subroutine, but the object based style can be seen by looking at inform.
-
-For example
-
-```perl6
-
+#!/usr/bin/env perl6
+use v6.c;
 use Informative;
 =comment
   Show a box with some information on screen, has a destructor x on window, but removes itself after 10s.
@@ -90,14 +82,3 @@ my $login = inform('Please supply your username and password',
     );
 
 if $login.response eq 'OK' { say "user name is \<{$login.data<un>}> and password is \<{$login.data<pw_pw>}>" };
-```
-
-A design goal his to keep the module as simple and small as possible, and to result in a popup that is intuitive to the user. Hence:
-- A buttonless lable has a countdown timer to show when it is disappearing.
-- Entries are not permitted without buttons. In principle, gtk_entry has an Activate signal that could be attached to an Entry widget (when text is ended with a Return key). However, a dialog box with only an entry form with no obvious way to respond would be difficult to understand.
-- All Buttons act in the same way: if Entry widgets are present, the text is stored in the data attribute, and the dialog box is closed. It is for the user to determine how to handle the data.
-- A dialog box that is destroy by clicking on the x will not store Entry data.
-
-There are no limits in the module on the number of buttons or entry widgets that can be added. However, in practice, the reliance on gtk default formating will probably quickly make the inform box look ugly.
-
-If more sophisticated button behaviours, different widgets or formating are required, look at the Gtk::Simple module.

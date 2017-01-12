@@ -17,8 +17,8 @@ unit module Informative;
         has $!title;
         has $!position;
         has $!timer-lable;
-        has %!buttons;
-        has %!entries;
+        has @!buttons;
+        has @!entries;
         has %.data = {};
         has $.response;
         has Supply $!sup = self.g-timeout(1000);
@@ -50,10 +50,10 @@ unit module Informative;
             my $argv = CArray[CArray[Str]].new;
             $argv[0] = $arg_arr;
             for @buttons -> $el { 
-                %!buttons{$el.key}<lable> = $el.value 
+                @!buttons.push: { :name($el.key), :lable($el.value) }
             };
             for @entries -> $el {
-                %!entries{$el.key}<lable> = $el.value 
+                @!entries.push: { :name($el.key), :lable($el.value) }
             };
             
             gtk_init($argc, $argv);
@@ -81,33 +81,33 @@ unit module Informative;
             gtk_container_add( $!app, $!box );
             gtk_box_pack_start( $!box, $!inf-lable, 0,0,0);
             gtk_box_pack_end( $!box, $!btn-box, 0,0,0);
-            if %!entries.elems {
+            if @!entries.elems {
                 # Design decision is not to allow entries without buttons
-                %!buttons = ( OK =>{ :lable('OK') }, Cancel => {:lable('Cancel')}) 
-                    unless %!buttons.elems;
-                for %!entries.kv -> $nm, %en {
+                @!buttons = ( { :name('OK'), :lable('OK') }, {:name("Cancel"),:lable('Cancel')}) 
+                    unless @!buttons.elems;
+                for @!entries -> %en {
                     %en<widget> = gtk_entry_new( );
                     # treat passwords differently
                     gtk_entry_set_visibility(%en<widget>, False)
-                        if $nm ~~ /['-'|_]pw$/ ;
+                        if %en<name> ~~ /['-'|_]pw$/ ;
                     my $ebox = gtk_box_new( 0,0);
                     gtk_box_pack_start( $ebox, gtk_label_new( %en<lable>.Str ), 0,0,0);
                     gtk_box_pack_start( $ebox, %en<widget>, 0,0,0);
                     gtk_box_pack_start( $!box, $ebox, -1,-1,1);
                 }
             }
-            if %!buttons.elems {
-                for %!buttons.kv -> $nm,%b {
+            if @!buttons.elems {
+                for @!buttons -> %b {
                     %b<widget> = gtk_button_new_with_label( %b<lable>.Str );
                     gtk_box_pack_start( $!btn-box, %b<widget>, -1,-1,1);
                     g_signal_connect_wd( %b<widget>, 'clicked', 
                         -> $widget, $event { 
-                            $!response =  $nm;
+                            $!response =  %b<name>;
                             # if there are entries then transfer the text information
                             # let user decide what to do with info
-                            if %!entries.elems {
-                                for %!entries.kv -> $nm, %en {
-                                    %!data{$nm} = gtk_entry_get_text( %en<widget> );
+                            if @!entries.elems {
+                                for @!entries -> %en {
+                                    %!data{ %en<name> } = gtk_entry_get_text( %en<widget> );
                                 }
                             }
                             gtk_widget_hide($!app );
@@ -151,7 +151,7 @@ unit module Informative;
                 with $str;
             gtk_label_set_markup($!inf-lable, $!text.Str);
             
-            unless %!buttons.elems {
+            unless @!buttons.elems {
                 $!timer = $timer // $!timer;
                 $!show-countdown = $show-countdown // $!show-countdown;
                 $!text = $str // $!text;
