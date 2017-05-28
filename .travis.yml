@@ -17,7 +17,6 @@ before_install:
   - if [ "$TRAVIS_OS_NAME" == "osx"   ]; then ulimit -n 8192                    ; fi
 
 install:
-  - rakudobrew build panda
-  - panda installdeps .
+  - rakudobrew build-zef
+  - zef --debug --depsonly install .
 
-script: prove -v -e "perl6 -Ilib" t/ && panda install .
