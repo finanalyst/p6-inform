@@ -1,5 +1,6 @@
 {
     "name" : "Inform",
+    "license" : "Artistic-2.0",
     "authors" : "Richard Hainsworth, aka finanalyst",
     "version" : "0.1",
     "perl"    : "6.c",
