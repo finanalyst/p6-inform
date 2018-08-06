@@ -100,7 +100,8 @@ class Build {
             for @files -> $f {
                 # write empty files for now
                 spurt("$basedir/$f", "");
-            }
-        }
+                             }
+          }
+            1;
     }
 }
