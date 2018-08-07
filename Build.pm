@@ -1,5 +1,3 @@
-use Panda::Builder;
-
 use Shell::Command;
 use LWP::Simple;
 use NativeCall;
@@ -7,7 +5,7 @@ use NativeCall;
 # test sub for system library
 sub test() is native('libgtk-3-0.dll') { * }
 
-class Build is Panda::Builder {
+class Build {
     method build($workdir) {
         my $need-copy = False;
 
@@ -102,7 +100,8 @@ class Build is Panda::Builder {
             for @files -> $f {
                 # write empty files for now
                 spurt("$basedir/$f", "");
-            }
-        }
+                             }
+          }
+            1;
     }
 }
