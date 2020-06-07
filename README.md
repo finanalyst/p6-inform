@@ -8,6 +8,8 @@ For example
 
 ```perl6
 
+#!/usr/bin/env raku
+use v6.d;
 use Informative;
 =comment
   Show a box with some information on screen, has a destructor x on window, but removes itself after 10s.
@@ -24,11 +26,13 @@ inform( 'This is <span color="blue">blue</span> and <span color="red" weight="bo
   
 my $popup = inform( 'Shorter time span for me', :timer(5), :title<More> );
 =comment
-  The title of the window is now 'More'
+  The title of the window is now 'More'.
+  The C<inform> subroutine returning an instance of the C<Informing> class, which is then shown.
 
 =comment 
-  The 'Informing' object in $popup can be reused with changes in message, countdown and timer.
-  The title, buttons and entries are only allowed when creating a new 'Informing' object.
+  The C<Informing> object in $popup can be reused with changes in message, countdown and timer.
+  The title, buttons and entries are only allowed when creating a new C<Informing> object.
+  The C<show> method is available in the C<Informing> object.
   
 $popup.show( 'See no countdown, but timer is unchanged', :!show-countdown );
 =comment
@@ -70,8 +74,8 @@ my $data = inform('Give me some things to clean',
     :entries( Laundry => 'Enter your laundry list',)
     );
 =comment
-  Box contains a label, then one or more entry widgets, then a row of boxes. 
-  The formating will depend on gtk defaults.
+  The box contains a label, then one or more entry widgets, then a row of boxes.
+  The formatting will depend on gtk defaults.
   NOTE: 'buttons' and 'entries' each expect a list of pairs, not a hash. So the comma
   after '...laundry list' and before the bracket is essential to force a list. With
   two elements, as in the buttons expression, a list already forms. 
@@ -100,4 +104,4 @@ A design goal his to keep the module as simple and small as possible, and to res
 
 There are no limits in the module on the number of buttons or entry widgets that can be added. However, in practice, the reliance on gtk default formating will probably quickly make the inform box look ugly.
 
-If more sophisticated button behaviours, different widgets or formating are required, look at the Gtk::Simple module.
+If more sophisticated button behaviours, different widgets or formatting are required, look at the Gtk::Simple module.
