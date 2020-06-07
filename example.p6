@@ -1,4 +1,4 @@
-#!/usr/bin/env perl6
+#!/usr/bin/env raku
 use v6.c;
 use Informative;
 =comment
@@ -16,11 +16,13 @@ inform( 'This is <span color="blue">blue</span> and <span color="red" weight="bo
   
 my $popup = inform( 'Shorter time span for me', :timer(5), :title<More> );
 =comment
-  The title of the window is now 'More'
+  The title of the window is now 'More'.
+  The C<inform> subroutine returning an instance of the C<Informing> class, which is then shown.
 
 =comment 
-  The 'Informing' object in $popup can be reused with changes in message, countdown and timer.
-  The title, buttons and entries are only allowed when creating a new 'Informing' object.
+  The C<Informing> object in $popup can be reused with changes in message, countdown and timer.
+  The title, buttons and entries are only allowed when creating a new C<Informing> object.
+  The C<show> method is available in the C<Informing> object.
   
 $popup.show( 'See no countdown, but timer is unchanged', :!show-countdown );
 =comment
@@ -62,8 +64,8 @@ my $data = inform('Give me some things to clean',
     :entries( Laundry => 'Enter your laundry list',)
     );
 =comment
-  Box contains a label, then one or more entry widgets, then a row of boxes. 
-  The formating will depend on gtk defaults.
+  The box contains a label, then one or more entry widgets, then a row of boxes.
+  The formatting will depend on gtk defaults.
   NOTE: 'buttons' and 'entries' each expect a list of pairs, not a hash. So the comma
   after '...laundry list' and before the bracket is essential to force a list. With
   two elements, as in the buttons expression, a list already forms. 
