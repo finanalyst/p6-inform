@@ -36,7 +36,7 @@ $popup = inform( 'I prefer the blues', :timer(5), :countdown-colour<blue> );
 =comment
   Oops blues originated in the USA
 
-$popup = inform( 'The blues spread in the movies', :timer(5), :countdown-color<cornsilk> );
+$popup = inform( 'The blues spread in the movies', :timer(5), :countdown-color<#9c5d7c> );
 
 =comment
   Add some buttons

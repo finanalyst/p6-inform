@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ffc47474-e012-49f4-b4ab-a43d14f6d25a" name="Default Changelist" comment="">
+    <list default="true" id="ffc47474-e012-49f4-b4ab-a43d14f6d25a" name="Default Changelist" comment="new countdown-colour parameter">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/META6.json" beforeDir="false" afterPath="$PROJECT_DIR$/META6.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example.p6" beforeDir="false" afterPath="$PROJECT_DIR$/example.p6" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/Informative.pm6" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Informative.pm6" afterDir="false" />
     </list>
@@ -14,6 +15,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="ProjectId" id="1czgugMg9d6if5fDm0BpAYAW3Qp" />
   <component name="ProjectViewState">
@@ -23,6 +25,14 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Basic test" type="PERL6_TEST_CONFIGURATION" factoryName="Raku test">
+      <PARALELLISM_DEGREE>1</PARALELLISM_DEGREE>
+      <ENVS />
+      <PASS_PARENT_ENV>false</PASS_PARENT_ENV>
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -37,10 +47,46 @@
     </task>
     <servers />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="new countdown-colour parameter" />
+    <option name="LAST_COMMIT_MESSAGE" value="new countdown-colour parameter" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="379" y="190" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1591637801074">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="379" y="190" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1591637801074" />
+    <state x="634" y="132" width="701" height="812" key="CommitChangelistDialog2" timestamp="1591648291763">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="634" y="132" width="701" height="812" key="CommitChangelistDialog2/0.27.1920.1053@0.27.1920.1053" timestamp="1591648291763" />
+    <state width="1675" height="255" key="GridCell.Tab.0.bottom" timestamp="1591642582548">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="1675" height="255" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1591642582548" />
+    <state width="1675" height="255" key="GridCell.Tab.0.center" timestamp="1591642582548">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="1675" height="255" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1591642582548" />
+    <state width="1675" height="255" key="GridCell.Tab.0.left" timestamp="1591642582548">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="1675" height="255" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1591642582548" />
+    <state width="1675" height="255" key="GridCell.Tab.0.right" timestamp="1591642582548">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="1675" height="255" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1591642582548" />
+    <state x="504" y="278" width="824" height="515" key="IDE.errors.dialog" timestamp="1591638002368">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="504" y="278" width="824" height="515" key="IDE.errors.dialog/0.27.1920.1053@0.27.1920.1053" timestamp="1591638002368" />
     <state x="968" y="240" width="662" height="662" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1591543988239">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="968" y="240" width="662" height="662" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.27.1920.1053@0.27.1920.1053" timestamp="1591543988239" />
+    <state x="777" y="455" width="425" height="167" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591648210078">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="777" y="455" width="425" height="167" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.27.1920.1053@0.27.1920.1053" timestamp="1591648210078" />
   </component>
 </project>

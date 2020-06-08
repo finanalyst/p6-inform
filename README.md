@@ -7,9 +7,8 @@ The example uses the inform procedural style subroutine, but the object based st
 For example
 
 ```perl6
-
 #!/usr/bin/env raku
-use v6.d;
+use v6.c;
 use Informative;
 =comment
   Show a box with some information on screen, has a destructor x on window, but removes itself after 10s.
@@ -37,6 +36,16 @@ my $popup = inform( 'Shorter time span for me', :timer(5), :title<More> );
 $popup.show( 'See no countdown, but timer is unchanged', :!show-countdown );
 =comment
   The timer is now no longer showing
+
+=comment
+  The colour (in USA color) of the countdown can be changed from the default 'red' to any colour accepted by Pango.
+
+$popup = inform( 'I prefer the blues', :timer(5), :countdown-colour<blue> );
+
+=comment
+  Oops blues originated in the USA
+
+$popup = inform( 'The blues spread in the movies', :timer(5), :countdown-color<#9c5d7c> );
 
 =comment
   Add some buttons

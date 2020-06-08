@@ -24,9 +24,9 @@ unit module Informative;
         has Supply $!sup = self.g-timeout(1000);
         has Tap $!tap;
         has Int $!timer = 10;
-        has Bool $!show-countdown = True;
+        has Bool $!show-countdown;
         has Str $.text is rw = "Say <span color=\"green\">something</span><span weight=\"bold\" color=\"red\"> beautiful</span>";
-        has $.countdown-colour = 'red';
+        has $.countdown-colour;
 
         enum GtkWindowPosition (
             GTK_WIN_POS_NONE               => 0,
@@ -42,6 +42,8 @@ unit module Informative;
         Str :$!title = "Inform",
         :@buttons = (),
         :@entries = (),
+        Str :$!countdown-colour = 'red',
+        Bool :$!show-countdown = True,
         GtkWindowPosition :$!position = GTK_WIN_POS_CENTER
         ) {
             my $arg_arr = CArray[Str].new;
@@ -152,7 +154,6 @@ unit module Informative;
             $!text = $str
                 with $str;
             gtk_label_set_markup($!inf-lable, $!text.Str);
-            
             unless @!buttons.elems {
                 $!timer = $timer // $!timer;
                 $!show-countdown = $show-countdown // $!show-countdown;
