@@ -124,9 +124,9 @@ unit module Informative;
         method make-text( $count ) {
             my $lable;
             if $!show-countdown and $!timer > 0 {
-                $lable = "<span weight=\"bold\" size=\"x-large\" color=\"white\">$count sec</span>"
+                $lable = "<span weight=\"bold\" size=\"x-large\" color=\"red\">$count sec</span>"
             } elsif $!show-countdown {
-                $lable = "<span weight=\"bold\" size=\"x-large\" color=\"white\">Til window is closed</span>"
+                $lable = "<span weight=\"bold\" size=\"x-large\" color=\"red\">Til window is closed</span>"
             }
             with $lable {
                 gtk_label_set_markup($!timer-lable, $lable.Str)
