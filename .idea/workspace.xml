@@ -4,8 +4,6 @@
     <list default="true" id="ffc47474-e012-49f4-b4ab-a43d14f6d25a" name="Default Changelist" comment="new countdown-colour parameter">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/META6.json" beforeDir="false" afterPath="$PROJECT_DIR$/META6.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example.p6" beforeDir="false" afterPath="$PROJECT_DIR$/example.p6" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/Informative.pm6" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Informative.pm6" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

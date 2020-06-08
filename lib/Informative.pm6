@@ -148,17 +148,16 @@ unit module Informative;
             Str $str?,
             Int :$timer,
             Bool :$show-countdown,
-            Str :$countdown-colour;
+            Str :countdown-color(:$countdown-colour);
         ) {
             self.init if $!reinit;
             $!text = $str
                 with $str;
+            $!countdown-colour = $countdown-colour with $countdown-colour;
+            $!show-countdown = $show-countdown with $show-countdown;
+            $!timer = $timer with $timer;
             gtk_label_set_markup($!inf-lable, $!text.Str);
             unless @!buttons.elems {
-                $!timer = $timer // $!timer;
-                $!show-countdown = $show-countdown // $!show-countdown;
-                $!countdown-colour = $countdown-colour // $!countdown-colour;
-                $!text = $str // $!text;
                 self.make-text( $!timer );
                 
                 if $!timer > 0 {
