@@ -29,6 +29,16 @@ $popup.show( 'See no countdown, but timer is unchanged', :!show-countdown );
   The timer is now no longer showing
 
 =comment
+  The colour (in USA color) of the countdown can be changed from the default 'red' to any colour accepted by Pango.
+
+$popup = inform( 'I prefer the blues', :timer(5), :countdown-colour<blue> );
+
+=comment
+  Oops blues originated in the USA
+
+$popup = inform( 'The blues spread in the movies', :timer(5), :countdown-color<cornsilk> );
+
+=comment
   Add some buttons
   
 my $gui-response = inform( 'Do you want to continue?', 

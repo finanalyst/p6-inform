@@ -26,6 +26,7 @@ unit module Informative;
         has Int $!timer = 10;
         has Bool $!show-countdown = True;
         has Str $.text is rw = "Say <span color=\"green\">something</span><span weight=\"bold\" color=\"red\"> beautiful</span>";
+        has $.countdown-colour = 'red';
 
         enum GtkWindowPosition (
             GTK_WIN_POS_NONE               => 0,
@@ -124,9 +125,9 @@ unit module Informative;
         method make-text( $count ) {
             my $lable;
             if $!show-countdown and $!timer > 0 {
-                $lable = "<span weight=\"bold\" size=\"x-large\" color=\"red\">$count sec</span>"
+                $lable = "<span weight=\"bold\" size=\"x-large\" color=\"{ $.countdown-colour }\">$count sec</span>"
             } elsif $!show-countdown {
-                $lable = "<span weight=\"bold\" size=\"x-large\" color=\"red\">Til window is closed</span>"
+                $lable = "<span weight=\"bold\" size=\"x-large\" color=\"{ $.countdown-colour }\">Til window is closed</span>"
             }
             with $lable {
                 gtk_label_set_markup($!timer-lable, $lable.Str)
@@ -144,7 +145,8 @@ unit module Informative;
         method show(
             Str $str?,
             Int :$timer,
-            Bool :$show-countdown
+            Bool :$show-countdown,
+            Str :$countdown-colour;
         ) {
             self.init if $!reinit;
             $!text = $str
@@ -154,6 +156,7 @@ unit module Informative;
             unless @!buttons.elems {
                 $!timer = $timer // $!timer;
                 $!show-countdown = $show-countdown // $!show-countdown;
+                $!countdown-colour = $countdown-colour // $!countdown-colour;
                 $!text = $str // $!text;
                 self.make-text( $!timer );
                 
@@ -630,11 +633,12 @@ unit module Informative;
         Str $message?, 
         Int :$timer, 
         Str :$title = 'Inform', 
-        Bool :$show-countdown,  
+        Bool :$show-countdown,
+        Str :countdown-color(:$countdown-colour) = 'red',
         :@buttons,
         :@entries
         ) is export {
-        my Informing $pop .=new( :title( $title ), :buttons(@buttons), :entries(@entries) );
-        $pop.show( $message, :timer( $timer ), :show-countdown($show-countdown) );
+        my Informing $pop .=new(:title( $title ), :buttons(@buttons), :entries(@entries), :$countdown-colour);
+        $pop.show( $message, :$timer, :$show-countdown);
         return $pop
     }
