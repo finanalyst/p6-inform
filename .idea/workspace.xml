@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ffc47474-e012-49f4-b4ab-a43d14f6d25a" name="Default Changelist" comment="new countdown-colour parameter">
+      <change afterPath="$PROJECT_DIR$/appveyor.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/META6.json" beforeDir="false" afterPath="$PROJECT_DIR$/META6.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Informative.pm6" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Informative.pm6" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +22,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../raku-gtk-simple/appveyor.yml" />
   </component>
   <component name="RunManager">
     <configuration name="Basic test" type="PERL6_TEST_CONFIGURATION" factoryName="Raku test">
@@ -58,6 +58,10 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="634" y="132" width="701" height="812" key="CommitChangelistDialog2/0.27.1920.1053@0.27.1920.1053" timestamp="1591648291763" />
+    <state x="998" y="277" width="424" height="491" key="FileChooserDialogImpl" timestamp="1591691779073">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="998" y="277" width="424" height="491" key="FileChooserDialogImpl/0.27.1920.1053@0.27.1920.1053" timestamp="1591691779073" />
     <state width="1675" height="255" key="GridCell.Tab.0.bottom" timestamp="1591642582548">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
@@ -82,9 +86,9 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="968" y="240" width="662" height="662" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.27.1920.1053@0.27.1920.1053" timestamp="1591543988239" />
-    <state x="777" y="455" width="425" height="167" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591648210078">
+    <state x="777" y="455" width="425" height="167" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591691786566">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="777" y="455" width="425" height="167" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.27.1920.1053@0.27.1920.1053" timestamp="1591648210078" />
+    <state x="777" y="455" width="425" height="167" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.27.1920.1053@0.27.1920.1053" timestamp="1591691786566" />
   </component>
 </project>
