@@ -9,6 +9,9 @@
     "LWP::Simple",
     "Shell::Command"
   ],
+  "depends": [
+    "NativeCall"
+  ],
   "provides": {
     "Informative": "lib/Informative.pm6"
   },

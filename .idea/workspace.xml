@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ffc47474-e012-49f4-b4ab-a43d14f6d25a" name="Default Changelist" comment="new countdown-colour parameter">
-      <change beforePath="$PROJECT_DIR$/appveyor.yml" beforeDir="false" afterPath="$PROJECT_DIR$/appveyor.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-module.appveyor.yml" beforeDir="false" afterPath="$PROJECT_DIR$/test-module.appveyor.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/META6.json" beforeDir="false" afterPath="$PROJECT_DIR$/META6.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,10 +83,10 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state width="1675" height="255" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1591642582548" />
-    <state x="504" y="278" width="824" height="515" key="IDE.errors.dialog" timestamp="1591638002368">
+    <state x="504" y="278" width="1073" height="646" key="IDE.errors.dialog" timestamp="1591696903621">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="504" y="278" width="824" height="515" key="IDE.errors.dialog/0.27.1920.1053@0.27.1920.1053" timestamp="1591638002368" />
+    <state x="504" y="278" width="1073" height="646" key="IDE.errors.dialog/0.27.1920.1053@0.27.1920.1053" timestamp="1591696903621" />
     <state x="968" y="240" width="662" height="662" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1591543988239">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
