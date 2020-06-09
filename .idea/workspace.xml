@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ffc47474-e012-49f4-b4ab-a43d14f6d25a" name="Default Changelist" comment="new countdown-colour parameter">
-      <change afterPath="$PROJECT_DIR$/appveyor.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -22,7 +21,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../raku-gtk-simple/appveyor.yml" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager">
     <configuration name="Basic test" type="PERL6_TEST_CONFIGURATION" factoryName="Raku test">
@@ -58,10 +57,10 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="634" y="132" width="701" height="812" key="CommitChangelistDialog2/0.27.1920.1053@0.27.1920.1053" timestamp="1591648291763" />
-    <state x="998" y="277" width="424" height="491" key="FileChooserDialogImpl" timestamp="1591691779073">
+    <state x="998" y="277" width="424" height="491" key="FileChooserDialogImpl" timestamp="1591695268736">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="998" y="277" width="424" height="491" key="FileChooserDialogImpl/0.27.1920.1053@0.27.1920.1053" timestamp="1591691779073" />
+    <state x="998" y="277" width="424" height="491" key="FileChooserDialogImpl/0.27.1920.1053@0.27.1920.1053" timestamp="1591695268736" />
     <state width="1675" height="255" key="GridCell.Tab.0.bottom" timestamp="1591642582548">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
