@@ -19,13 +19,12 @@ install:
   - echo "installing SSL so we can download the dll files"
   - zef install IO::Socket::SSL
   - zef --depsonly install .
-  - zef install Test::META
   - zef build .
 
 build: off
 
 test_script:
-  - set AUTHOR_TESTING=1 && prove -ve "raku -Ilib"
+  - prove -ve "raku -Ilib"
   - zef --debug install .
 
 shallow_clone: true
