@@ -1,15 +1,10 @@
-
-use v6;
+use v6.d;
 use Test;
+
+use-ok 'Informative';
+
 use Informative;
-
-plan *;
-
-if %*ENV<DISPLAY> or $*DISTRO.is-win {
-    my $p;
-    lives-ok {$p = inform(:timer(2))}
-    lives-ok {$p.show('A string')}
-    isa-ok $p, Informative::Informing, 'is the correct type';
-}
+my Informative::Informing $p;
+lives-ok { $p .= new }, 'instantiates ok';
 
 done-testing;
