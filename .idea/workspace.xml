@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ffc47474-e012-49f4-b4ab-a43d14f6d25a" name="Default Changelist" comment="new countdown-colour parameter">
+      <change afterPath="$PROJECT_DIR$/old-travis.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/t/01-sanity.t" beforeDir="false" afterPath="$PROJECT_DIR$/t/02-test-boxes.t" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.travis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.travis.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appveyor.yml" beforeDir="false" afterPath="$PROJECT_DIR$/appveyor.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/raku-inform.iml" beforeDir="false" afterPath="$PROJECT_DIR$/raku-inform.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/t/01-sanity.t" beforeDir="false" afterPath="$PROJECT_DIR$/t/01-sanity.t" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/t/02-test-boxes.t" beforeDir="false" afterPath="$PROJECT_DIR$/t/02-test-boxes.t" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,7 +23,6 @@
   <component name="ProjectId" id="1czgugMg9d6if5fDm0BpAYAW3Qp" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -95,5 +100,9 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="777" y="455" width="425" height="167" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.27.1920.1053@0.27.1920.1053" timestamp="1591691786566" />
+    <state x="131" y="102" width="869" height="598" key="new project wizard" timestamp="1591809732440">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="131" y="102" width="869" height="598" key="new project wizard/0.27.1920.1053@0.27.1920.1053" timestamp="1591809732440" />
   </component>
 </project>
