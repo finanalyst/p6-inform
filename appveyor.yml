@@ -19,7 +19,7 @@ install:
 build: off
 
 test_script:
-  - prove -v -e "perl6 -Ilib" t/
+  - prove -v -e "raku -Ilib" t/
   - zef --debug install .
 
 shallow_clone: true
