@@ -1,7 +1,7 @@
 {
   "name": "Inform",
   "description": "Easy to use GUI Dialog box using GTK3 label, button, entry widgets",
-  "version": "1.3.1",
+  "version": "1.3.2",
   "perl": "6.d",
   "authors": "Richard Hainsworth, aka finanalyst",
   "auth": "github:finanalyst",
