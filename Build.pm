@@ -2,6 +2,8 @@ use Shell::Command;
 use LWP::Simple;
 use NativeCall;
 
+# The whole of this file is based on BUILD.pm in GTK::Simple
+
 # test sub for system library
 sub test() is native('libgtk-3-0.dll') { * }
 
@@ -46,12 +48,23 @@ class Build {
 
         if $need-copy {
             # to avoid a dependency (and because Digest::SHA is too slow), we do a hacked up powershell hash
-            # this should work all the way back to powershell v1
-            my &ps-hash = -> $path {
-                my $fn = 'function get-sha256 { param($file);[system.bitconverter]::tostring([System.Security.Cryptography.sha256]::create().computehash([system.io.file]::openread((resolve-path $file)))) -replace \"-\",\"\" } ';
-                my $out = qqx/powershell -noprofile -Command "$fn get-sha256 $path"/;
-                $out.lines.grep({$_.chars})[*-1];
-            }
+                    # this should work all the way back to powershell v1
+                    # Otherwise we try to run CertUtil.exe which seems to be built into windowses.
+                    my &ps-hash = -> $path {
+                        my $hash;
+                        try {
+                            my $fn = 'function get-sha256 { param($file);[system.bitconverter]::tostring([System.Security.Cryptography.sha256]::create().computehash([system.io.file]::openread((resolve-path $file)))) -replace \"-\",\"\" } ';
+                            $hash = shell(
+                                :!err, :out, qq/powershell -noprofile -Command "$fn get-sha256 $path"/
+                            ).out.lines(:close).grep({$_.chars})[*-1].uc;
+                        }
+                        without $hash {
+                            $hash = run("CertUtil.exe", "-hashfile", $path, "SHA256", :out)
+                                .out.slurp(:close).subst(" ", "", :g)
+                                .lines.first(/^ <xdigit>**64 $/).uc;
+                        }
+                        $hash
+                    }
             say 'No system gtk library detected. Installing bundled version.';
             my $basedir = $workdir ~ '\resources\blib\lib\GTK';
             mkdir($basedir);
@@ -102,6 +115,6 @@ class Build {
                 spurt("$basedir/$f", "");
                              }
           }
-            1;
+          return True;
     }
 }

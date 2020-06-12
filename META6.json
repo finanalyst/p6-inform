@@ -1,16 +1,16 @@
 {
   "name": "Inform",
   "description": "Easy to use GUI Dialog box using GTK3 label, button, entry widgets",
-  "version": "1.2",
+  "version": "1.3.1",
   "perl": "6.d",
   "authors": "Richard Hainsworth, aka finanalyst",
   "auth": "github:finanalyst",
+  "depends": [
+    "NativeCall"
+  ],
   "build-depends": [
     "LWP::Simple",
     "Shell::Command"
-  ],
-  "depends": [
-    "NativeCall"
   ],
   "provides": {
     "Informative": "lib/Informative.pm6"
@@ -41,7 +41,7 @@
     "blib/lib/GTK/libxml2-2.dll",
     "blib/lib/GTK/zlib1.dll"
   ],
-  "license": "Artistic-2.0",
+  "license": "MIT",
   "source-url": "git://github.com/finanalyst/p6-inform.git",
   "repo-type": "git"
 }

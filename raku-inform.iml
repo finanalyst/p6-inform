@@ -22,5 +22,37 @@
         </SOURCES>
       </library>
     </orderEntry>
+    <orderEntry type="module-library">
+      <library name="NativeCall" type="perl6">
+        <CLASSES />
+        <SOURCES>
+          <root url="raku://-1136607005:NativeCall!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="NativeCall" type="perl6">
+        <CLASSES />
+        <SOURCES>
+          <root url="raku://-1136607005:NativeCall!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="NativeCall" type="perl6">
+        <CLASSES />
+        <SOURCES>
+          <root url="raku://-1136607005:NativeCall!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="NativeCall" type="perl6">
+        <CLASSES />
+        <SOURCES>
+          <root url="raku://-1136607005:NativeCall!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
   </component>
 </module>
