@@ -1,9 +1,6 @@
 use NativeCall;
 use nqp;
 unit module Informative;
-=comment
-    The clever code is copied from GTK::Simple
-    The Windows code in particular comes from GTK::Simple.
     
 =comment code for the inform dialog box 
 
@@ -214,8 +211,8 @@ unit module Informative;
         
         =comment
             Subroutines only needed to work with Windows
-            copied directly from GTK::Simple::NativeLib            
-                    
+            copied directly from GTK::Simple::NativeLib
+
         # On any non-windows machine, this just returns the library name
         # for the native calls.
         #
@@ -302,13 +299,13 @@ unit module Informative;
         }
 
         sub find-bundled($lib is copy) {
-            # if we can't find one, assume there's a system install
-            my $base = "blib/lib/GTK/$lib";
-
-            if my $file = %?RESOURCES{$base} {
-                    $file.IO.copy($*SPEC.tmpdir ~ '\\' ~ $lib);
-                    $lib = $*SPEC.tmpdir ~ '\\' ~ $lib;
-            }
+#            # if we can't find one, assume there's a system install
+#            my $base = "blib/lib/GTK/$lib";
+#
+#            if my $file = %?RESOURCES{$base} {
+#                    $file.IO.copy($*SPEC.tmpdir ~ '\\' ~ $lib);
+#                    $lib = $*SPEC.tmpdir ~ '\\' ~ $lib;
+#            }
 
             $lib;
         }
@@ -511,7 +508,7 @@ unit module Informative;
         sub load-lzma-lib is native(&lzma-lib) { ... }
         sub load-ffi-lib is native(&ffi-lib) { ... }
         sub load-pangoft2-lib is native(&pangoft2-lib) { ... }
-        
+
         =comment
             The actual gtk native subroutines needed by the Informing class
             

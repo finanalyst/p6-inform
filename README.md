@@ -1,6 +1,15 @@
-Provides a dialog box from a perl6 program. It is easy to add buttons and simple entry widgets to the box. Information is returned to a capture object.
-The module depends on gtk and borrows heavily from the gtk-simple module, but is not dependent on it.
-This module was developed using Ubuntu, but all of the Windows paraphanalia from Gdk::Simple is copied. It should work under Windows. 
+# Inform Module
+
+Provides a GTK dialog box from a Raku program. It is easy to add buttons and simple entry widgets to the box. Information is returned to a capture object.
+
+The module is a stripped down version of the gtk-simple module minus all the unused widgets.
+
+On Linux distributions, the GTK library is almost guaranteed, but there will be an error
+unless the `dev` library (something like `libgtk-dev`) is installed.
+
+On Windows, GTK is likely not installed. A build check is incorporated. If it fails, the GTK
+library has not been found. A place to look for installation help is the [GTK project](https://www.gtk.org/docs/installations/windows/)
+installation page.
 
 The example uses the inform procedural style subroutine, but the object based style can be seen by looking at inform.
 
