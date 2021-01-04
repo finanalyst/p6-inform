@@ -1,25 +1,15 @@
 use NativeCall;
 
-# The whole of this file is based on BUILD.pm in GTK::Simple
-
-# test sub for system library
-sub test() is native('libgtk-3-0.dll') { * }
+# test for presence of gtk system library
+sub LoadLibraryA( Str --> int32 ) is native( 'kernel32' ) { * };
 
 class Build {
     method build($workdir) {
-        my $no-gtk = False;
-
-        # we only have .dll files bundled. Non-windows is assumed to have gtk already
+        # Non-windows is assumed to have gtk already
         if $*DISTRO.is-win {
-            test();
-            CATCH {
-                default {
-                    $no-gtk = True if $_.payload ~~ m:s/Cannot locate/;
-                }
-            }
+            exit note "Windows: No GTK library found. See https://www.gtk.org/docs/installations/windows/"
+                        unless ?LoadLibraryA( "libgtk-3-0.dll" );
         }
-        exit note "Windows: No GTK library found. See https://www.gtk.org/docs/installations/windows/"
-            if $no-gtk;
-        note "GTK library found. Caution is libgtk-dev installed on Linux distributions?"
+        note "GTK library found. Caution: libgtk-dev should also be installed on Linux distributions"
     }
 }
